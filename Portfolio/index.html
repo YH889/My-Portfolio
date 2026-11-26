@@ -1,5 +1,167 @@
 <!DOCTYPE html>
-<html>
-<head><title>Portfolio</title></head>
-<body></body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuri's Website</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section id="hero">
+        <header> <!-- LOOK! Another semantic tag! What do you think its function is? -->
+            <div id="logo-holder"><img src="logo.png"  alt="Yuri Hong portfolio logo" width="200px" />
+            </div>
+            
+            <div id="desktopMenu">
+                <nav>
+                    <ul id="menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#aboutme">ABOUT ME</a></li>
+                        <li><a href="#missionvision">MISSION&VISION</a></li>
+                        <li><a href="#education">EDUCATION</a></li>
+                        <li><a href="#skills">SKILLS</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- <nav id="mobileMenu"></nav> -->
+        </header>
+
+        <div id="intro-box">
+            <h1>Yuri Hong</h1>
+
+            <h2>IT Data Analytics Student</h2>
+
+            <p id="value-prop">
+            Learning data, technology and problem-solving
+            for a smarter future.
+            </p>
+            <div class="hero-buttons">
+                <button id="send-email" onclick="window.location.href='mailto:w0535206@nscc.ca?subject=Portfolio%20Inquiry'">💌GET IN TOUCH!</button>
+                <div class="paper-plane"></div>
+                <button type="button" id="animate-mascot" class="mascot-trigger">Say hello!✨
+                </button>
+            
+                <div class="mascot">
+                    <img src="images_mascot.png" alt="Yuri">
+                    <span class="mascot-sparkle"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="aboutme">
+        <h2>About Me</h2>
+
+        <div id="aboutme-container">
+            <div class="aboutme-text">
+                <p>I am an IT Data Analytics student at NSCC.</p>
+                <p>I am developing my skills in programming, data management, and web development.</p>
+                <p>I enjoy learning new technologies and solving problems through logical thinking.</p>
+            </div>
+
+            <div class="aboutme-box">
+                <h3>What I'm Learning</h3>
+                <p>Programming</p>
+                <p>Data Management</p>
+                <p>Web Development</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="missionvision">
+        <h2>Mission & Vision</h2>
+        <div id="missionvision-container">
+            <div class="missionvision-box">
+                <h3>My Mission</h3>
+                <p>My mission is to build a strong foundation in data analytics, programming, and technology.</p>
+            </div>
+
+            <div class="missionvision-box">
+                <h3>My Vision</h3>
+                <p>My vision is to become a skilled data analytics professional who can turn data into meaningful insights and support better decisions.</p>
+            </div>
+        </div>
+        </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <div id="education-container">
+            <div class="education-box">
+                <h3>Nova Scotia Community College</h3>
+                <p>IT Data Analytics</p>
+                <p>Currently studying</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>I am developing my skills in these areas:</p>
+
+        <div id="skills-container">
+            <div class="skills-box">
+                <img src="python.png" alt="Python logo">
+                <h3>Python</h3>
+            </div>
+
+            <div class="skills-box">
+                <img src="sql.png" alt="SQL logo">
+                <h3>SQL</h3>
+            </div>
+
+            <div class="skills-box">
+                <img src="html5.png" alt="HTML5 logo">
+                <h3>HTML5</h3>
+            </div>
+
+            <div class="skills-box">
+                <img src="css3.png" alt="CSS3 logo">
+                <h3>CSS3</h3>
+            </div>
+
+            <div class="skills-box">
+                <img src="javascript.png" alt="JavaScript logo">
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skills-box">
+                <img src="linux.png" alt="Linux logo">
+                <h3>Linux</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <p>Here are some areas I am working on as an IT Data Analytics student.</p>
+
+        <div id="projects-container">
+            <div class="project-box">
+                <h3>Portfolio Website</h3>
+                <p>Building a personal website using HTML and CSS.</p>
+            </div>
+
+            <div class="project-box">
+                <h3>Python Programming</h3>
+                <p>Practicing programming basics and problem-solving.</p>
+            </div>
+
+            <div class="project-box">
+                <h3>Data Analytics</h3>
+                <p>Developing skills in data management and analytics.</p>
+            </div>
+        </div>
+    </section>    
+    <script src="script.js"></script>    
+</body>
+
+<!-- <footer></footer> Left blank for now -->
 </html>

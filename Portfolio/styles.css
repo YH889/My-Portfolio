@@ -1,0 +1,534 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* This rule puts the logo and the menu in one horizontal row. */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    /* background-color: #F8F9FC; */
+}
+
+/* The logo leaves me with an off-centered menu, so I need to add an equal space on the other side to keep it centered */
+/* header::after {
+    content: "YURI Portfolio";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    color: #5B5FC7;
+    font-size: 3rem;
+    flex: 0 0 100px;
+    background-color: rgb(248, 249, 252,0.5);
+} */
+
+/* This will tell all sections to be the exact height of the screen. */
+section {
+    min-height: 100vh;    
+    height: auto;
+}
+
+/* The menu is a list, so let's remove default list styles  */
+#menu {
+    list-style-type: none;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1.3rem;
+}
+
+#menu a {
+    text-decoration: none;
+    color: var(--alert-color);
+}
+
+#menu a:visited {
+    color: var(--alert-color);
+}
+
+#menu a:hover {
+    color: black;
+}
+#menu a:active{
+    color: var(--alert-color);
+}
+
+
+/* This is our main nav element on the page. It holds the menu links but not the logo.  */
+#desktopMenu {
+    width: fit-content;
+    margin: 0 auto;
+    /* background-color: var(--accent-color) */
+}
+
+/* This refers to our whole top section, the hero section. It forces the hero to be exactly the height of the viewport, no matter what size it is, and it adds a background image. */
+#hero {
+    height: 100vh;
+    background-image: url('herobackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#intro-box {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 50%;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+}
+
+#intro-box h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+#intro-box h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+#intro-box p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* This centers my name and what I have to offer (my value proposition) or else just my job title or description */
+h1, #value-prop {
+    text-align: center;
+    /* color: #5B5FC7; */
+    color: var(--alert-color)
+}
+
+/* Keep both hero buttons together */
+#intro-box .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+#intro-box .hero-buttons button {
+    margin: 0;
+    width: 140px;
+    height: 46px;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+
+
+/* Buttons can be styled like any other HTML element with CSS! */
+button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto; 
+    /* background-color: #5B5FC7; */
+    background-color: var(--alert-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+
+button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: var(--alert-color);
+    border: 1px solid var(--alert-color);
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+/* 60-30-10 Color Rule */
+
+ :root{
+--background-color: #F8F9FC;
+--accent-color: #E7E8F5;
+--alert-color: #5B5FC7;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+background-color: var(--background-color);
+}
+
+
+.paper-plane {
+    position: fixed;
+    bottom: 100px;
+    left: -50px;
+    width: 40px;
+    height: 30px;
+    background-color: var(--alert-color);
+    clip-path: polygon(0 0, 100% 50%, 0 100%, 25% 50%);
+    visibility: hidden;
+    z-index: 1001;
+}
+
+@keyframes planeFly {
+    from {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    to {
+        transform: translate(110vw, -80vh) rotate(-15deg);
+    }
+}
+
+.mascot {
+    position: fixed;
+    bottom: 6px;
+    left: -180px;
+    width: 150px;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1000;
+
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.mascot img {
+    width: 100%;
+    display: block;
+
+    animation-duration: 0.55s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.mascot-trigger {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 1px solid #5B5FC7;
+    border-radius: 8px;
+    background: transparent;
+    color: #5B5FC7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mascot-trigger:hover {
+    background-color: #4549A5;
+    color: white;
+}
+
+@keyframes mascotMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 180px));
+    }
+}
+
+
+@keyframes mascotBounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-35px);
+    }
+}
+
+
+.mascot-sparkle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: #FFD966;
+    clip-path: polygon(
+        50% 0%,
+        61% 39%,
+        100% 50%,
+        61% 61%,
+        50% 100%,
+        39% 61%,
+        0% 50%,
+        39% 39%
+    );
+    animation: sparkleTwinkle 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes sparkleTwinkle {
+    from {
+        transform: scale(0.7) rotate(0deg);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1.2) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+
+
+#aboutme {
+    background-color: var(--accent-color);
+    text-align: center;
+    padding-top: 2rem;
+}
+
+
+#aboutme-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.aboutme-text,
+.aboutme-box {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;
+}
+
+.aboutme-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+#missionvision {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+
+#missionvision h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+#missionvision-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+#mission-box {
+    background-color: var(--accent-color);
+    padding: 2rem;
+    flex: 1;
+}
+
+
+.missionvision-box {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.missionvision-box h3 {
+    margin-bottom: 1rem;
+}
+
+.missionvision-box p {
+    line-height: 1.5;
+}
+
+#education {
+    background-color: var(--accent-color);
+    text-align: center;
+    padding-top: 3rem;
+}
+
+
+#education-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.education-box {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+#skills {
+    background-color: var(--background-color);
+    text-align: center;
+    padding-top: 3rem;
+}
+
+
+#skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.skills-box {
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.skills-box img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#projects {
+    background-color: var(--accent-color);
+    text-align: center;
+    padding-top: 3rem;
+}
+
+#projects-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.project-box {
+    flex: 1;
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+
+
+
+/* tablet */
+@media(min-width: 600px) and (max-width: 989px) {
+#menu {
+    font-size: 1rem;
+    gap: 0.6rem;
+    padding-left: 0;
+}
+#logo-holder img {
+    width: 120px;
+    }  
+#aboutme-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+} 
+#missionvision-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.missionvision-box p {
+    font-size: 1rem;
+}
+#education-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.education-box {
+    padding: 2.5rem;
+}
+#skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.skills-box {
+    flex: 1 1 40%;
+}
+}
+
+/* mobile */
+@media (max-width: 599px) {
+#menu {
+    flex-direction: column;
+    align-items: center;
+    font-size: .75rem;
+    gap: .75rem;
+    padding-left: 0;
+}
+ #logo-holder img {
+    width: 100px;
+    }
+#missionvision-container {
+    flex-direction: column;
+}
+#aboutme-container {
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#education-container {
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#skills-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#projects-container {
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#intro-box {
+    width: 80%;
+    margin: 2rem auto 0;
+}
+}
+    
+
+
